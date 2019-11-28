@@ -1,7 +1,11 @@
 
-<h1>Angular Router</h1>
-<nav>
-    <a routerLink="/weddings" routerLinkActive="active"> GO to weddings</a><br>
-    <a routerLink="/offers" routerLinkActive="active">Go to Offers</a>
-</nav>
-<router-outlet></router-outlet>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav>
+        <app-sidenav-list (closeSideNavigation)="sidenav.close()"></app-sidenav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <app-header (SideNavigationToggle)="sidenav.toggle()"></app-header>
+        <app-navtabs></app-navtabs>
+    </mat-sidenav-content>
+ <router-outlet></router-outlet>
+</mat-sidenav-container>
