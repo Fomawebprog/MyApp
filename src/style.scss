@@ -1,0 +1,21 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+
+$spanchBob-primary: mat-palette($mat-teal, 100);
+$spanchBob-accent:  mat-palette($mat-cyan, 300);
+
+
+$spanchBob-warn:    mat-palette($mat-red);
+
+
+$spanchBob: mat-light-theme($spanchBob-primary, $spanchBob-accent, $spanchBob-warn);
+
+
+@include angular-material-theme($spanchBob);
+
+
+.navtabs-container {
+    background-color: mat-color($spanchBob-accent);
+}
